@@ -1,0 +1,11 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro'
+import fetchDocs from '../../scripts/build/fetchDocs'
+import withMetaData from '../../scripts/build/withMetaData'
+
+export async function getStaticPaths() {
+    return await withMetaData(await fetchDocs('all'))
+}
+
+---
+     <DocsLayout content={Astro.props}/>

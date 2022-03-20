@@ -1,26 +1,27 @@
 ---
 import PrefetchLink from '../NavBar/PreFetchLink.astro'
 
-// Magic Recursive Call to the Same Component, 
-
-const {items} = Astro.props
+  // Magic Recursive Call to the Same Component, 
+const {items,dir,recursive} = Astro.props
 const {RecursiveComponent} = Astro.self
-let filter = [...items.filter(item=>item.name ==='overview'),...items.filter(item=>item.name !=='overview').sort((a, b)=> a.name < b.name)]
+let filter = [...items.filter(item=>item.name ==='overview'),
+    ...items.filter(item=>item.name !=='overview')
+    .sort((a, b)=> a?.meta?.page?.number || a.name < b?.meta?.page?.number || b.name)]
+console.log(items)
 ---
+<h3>{recursive??'Recusive call'}</h3>
+<h2>{dir ? dir.at(-1) : Astro.props.directory}</h2>
 <ul class="sidebar__parent">
-  <h2>{Astro.props.directory}</h2>
   {
     filter.map(
       item => (
         <li class="sidebar_items">
           {
             item.href
-              ? <PrefetchLink class={`sidebar_link ${Astro.request.url.pathname.includes(item.href) ? 'sidebar_link_active' : ''}`} href={item.href}>{item.name}</PrefetchLink>
-            : <h2>{item.name}</h2>
-          }
-          {
+              ? <PrefetchLink class={`sidebar_link ${Astro.request.url.pathname.match(item.href) ? 'sidebar_active' : ''}`} href={item.href}>{item?.meta?.title?.api || item?.meta?.title?.page || item.name}</PrefetchLink>
+            : 
             item.items && (
-              <Astro.self items={item.items} />
+              <Astro.self items={item.items} dir={item.directory} recursive/>
             )
           }
         </li>
