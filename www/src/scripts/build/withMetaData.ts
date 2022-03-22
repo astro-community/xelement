@@ -5,7 +5,7 @@
       const hash = Object.create(null)
       const root = { name: 'root' }
       for (const path of routes) {
-        const {slug,directory,data} = path.props
+          const {slug,directory,data} = path.props
           const metaData = Object.entries(data)
               .filter(result=>!result.includes('astro'))
               .reduce((prev,current)=>({...prev,[current[0]]:current[1]}),{})
@@ -17,17 +17,15 @@
             let isItem = index === String(directory.length - 1)
             if (isItem) {
                 item.items.push({ 
-                    name:slug,
-                    directory,
-                    href: `/docs/${directory.length > 1 
-                            ? directory.reduce((acc,curr)=>
+                    file: slug,
+                    directory: name,
+                    href: `/docs/${directory.reduce((acc,curr)=>
                                  acc+=`${curr}/`,'') 
-                            : `${directory}/`}${slug}`, 
+                        }${slug}`, 
                     meta:{...metaData}
                     })
             } else {
                 item.items = item.items || []
-    
                 item = (
                 hash[name] = (
                     hash[name] ||
@@ -36,7 +34,6 @@
                 )
             }
           }
-    
           path.props.menu = root.items
       }
     return routes
