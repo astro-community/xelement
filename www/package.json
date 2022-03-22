@@ -13,12 +13,11 @@
     "astro": "latest",
     "astro-fonts": "^0.2.5",
     "astro-icon": "^0.6.0",
-    "astro-seo": "^0.4.2",
     "astro-xelement": "^3.1.8",
     "autoprefixer": "^10.4.2",
-    "linkedom": "^0.14.3",
     "postcss": "^8.4.7",
     "sass": "^1.49.9",
+    "seo": "github:/astro-community/astro-seo",
     "tailwindcss": "^3.0.23"
   }
 }

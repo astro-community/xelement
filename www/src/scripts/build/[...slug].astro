@@ -1,0 +1,28 @@
+---
+import DocsLayout from '../layouts/DocsLayout.astro'
+import fetchDocs from '../scripts/build/fetchDocs'
+
+export async function getStaticPaths(){
+
+const docs = Astro.fetchContent('../../../docs/**/*.md').filter(
+	({file})=>!(file.pathname.toLowerCase().includes('readme'))).map(
+		(page)=>{
+			return ({
+				params:{
+					slug: page.file.pathname.slice(0,-3).replace('/','')
+				},
+				props: {
+					slug: page.file.pathname.slice(0,-3),
+					fileName: page.file.pathname.slice(0,-3).split('/').at(-1),
+					directory: page.file.pathname.slice(0,-3).split('/').slice(2,page.file.pathname.slice(0,-3).split('/').length-1),
+					data:{...page}
+				},
+			})
+	})
+		console.log(await fetchDocs('all'))
+    return docs
+}
+const {doc}=Astro.request.params
+const {data:{astro:{html}}} = Astro.props
+---
+     <DocsLayout content={Astro.props}/>

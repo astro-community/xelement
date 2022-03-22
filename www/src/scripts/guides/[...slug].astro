@@ -1,10 +1,10 @@
 ---
 import DocsLayout from '../../../layouts/DocsLayout.astro'
-import filterPaths from '../../../scripts/build/filteredPaths'
+import fetchDocs from '../../../scripts/build/fetchDocs'
 import withMetaData from '../../../scripts/build/withMetaData'
 
 export async function getStaticPaths() {
-    const paths = filterPaths('guides')
+    const paths = await fetchDocs('guides')
     return await withMetaData(paths)
 }
 

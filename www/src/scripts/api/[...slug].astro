@@ -1,11 +1,12 @@
 ---
 import DocsLayout from '../../../layouts/DocsLayout.astro'
-import filterPaths from '../../../scripts/build/filteredPaths'
+import fetchDocs from '../../../scripts/build/fetchDocs'
 import withMetaData from '../../../scripts/build/withMetaData'
 
 export async function getStaticPaths() {
-    const paths = filterPaths('api')
-    return await withMetaData(paths)
+    const paths = await fetchDocs('api')
+    console.log(paths)
+    return paths
 }
 
 ---
