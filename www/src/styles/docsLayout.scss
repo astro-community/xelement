@@ -5,7 +5,7 @@
 .container {
     height: 100%;
     display: grid; 
-    grid-template-columns: 12em 76em 12em; 
+    grid-template-columns: minmax(20%,30%) minmax(40%,60%) minmax(15%,20%); 
     grid-template-rows: 1fr; 
     gap: 0px 1em; 
     grid-template-areas: 

@@ -4,7 +4,7 @@
 ---
 <header class="navbar navbar_header sticky-head">
     <div class="navbar_logo">
-        <Icon name="astro-ui"/>
+        <Icon name="xelement logo"/>
     </div>
     <div class="navbar_feature">
         <span title="Visit Astro.build">Astro</span><span>-</span><span>UI</span><span>:</span><span>&#60;</span><span>XElement</span><span>&#47;</span><span>&#62;</span>
@@ -17,7 +17,13 @@
 </header>
 <style lang="scss">
     [astro-icon]{
-        @apply  fill-current;
+        @apply  fill-current transition-all h-10 m-2 z-10;
+        & :hover:nth-child(n){
+            fill:rgba(random($limit: 255),random($limit: 255),random($limit: 255),random($limit: 1));
+        }
+        & :nth-child(even){
+            fill: aqua
+        }
     }
     .navbar{
         @apply flex flex-row flex-wrap content-center justify-between items-center;

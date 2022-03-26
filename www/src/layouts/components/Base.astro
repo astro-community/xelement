@@ -1,6 +1,7 @@
 ---
 import Head from './Head.astro'
 import Header from '../../components/Header/Header.astro'
+import {Sprite} from 'astro-icon'   
 
 const {PageMeta,PageStyles}=Astro.props.meta
 ---
@@ -16,6 +17,7 @@ const {PageMeta,PageStyles}=Astro.props.meta
     <Header class="navbar navbar__header"/>
     <slot name="body"/>
 </body>
+    <Sprite.Provider></Sprite.Provider>
 </html>
 <style global lang="scss">
     @import '../../styles/main.scss';
