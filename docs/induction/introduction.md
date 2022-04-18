@@ -1,19 +1,19 @@
 ## What is XElement?
 
 
-> "XElement allows you to build HTML-first, interactive web components by generating dynamic HTML elements for Astro... all without the addition of any other JavaScript framework, renderer or library involved!"
+> "XElement allows you to build HTML-first, interactive web components by generating dynamic HTML elements for Astro...all without the addition of any other JavaScript framework, renderer or library involved!"
 
 It comes with a set of rich features that allow you to develop interactive client side components natively within Astro, and provides the option to customize how and when dynamic interactions are applied to your elements.
 
-Its highly performant, scaleable, simple and straight forward to use.
+It's highly performant, scaleable, simple and straight forward to use.
 
 ------------------
 
 ## Astro & XElement
 
-Currently, to apply any form of client side interactivity in Astro requires the use of an external UI Framework. These interactive components are predominately made from React, Solid, Svelte, Vue etc.
+Currently, to apply any form of client side interactivity in Astro requires the use of an external UI Framework. These interactive components are predominately made from React, Solid, Svelte, Vue, etc.
 
-XElement addresses the desire to have client-side interactivity *natively in Astro* to provide dynamic components hydrated on the client. This can provide a substantial performance boost over the conventional methods by not requiring any additional framework rendering.
+XElement addresses the desire to have client-side interactivity *natively in Astro* providing dynamic components that can be hydrated on the client. This can provide a substantial performance boost over the conventional methods by not requiring any additional framework rendering.
 
 ------------------
 
@@ -22,9 +22,9 @@ XElement addresses the desire to have client-side interactivity *natively in Ast
 ### Interactivity without adding any JavaScript framework
 Although dynamic, client-side interactivity can be achieved in Astro already through the addtion of React, Svelte, Vue etc. components, XElement can be used *instead* of a framework component to provide interactivity on your site. 
 
-### Combine other JavaScript framework components for increased interativity
+### Combine other JavaScript framework components for increased interactivity
 
-Each framework component rendered individually in Astro creates its own, isolated “island of interactivity.” Framework components cannot "talk" to each other: they cannot share or pass data even when they are rendered in the same Astro layout, component or page. Furthermore, its child components must be components of the same framework. (A React component can only have React children components; A Svelte component can only have Svelte children components...)
+Each framework component rendered individually in Astro creates its own, isolated “island of interactivity.” Framework components cannot "talk" to each other: they cannot share or pass data even when they are rendered in the same Astro layout, component or page. Furthermore, its child components must be components of the same framework. (A React component can only have React children components; A Svelte component can only have Svelte children components...and so on.)
 
 XElement can unite these separate components by providing a parent container element that can provide and execute dynamic, run-time actions based on data received from any and all child elements, even from multiple frameworks at the same time! 
 

@@ -13,7 +13,7 @@ page:
 ---
 # Client Side Interactivity
 
-XElement allows you to write your own client-side code either in JavaScript or Typescript. Directly inside your Astro files to enhance the abilities of existing HTML elements. 
+XElement allows you to write your own client-side code — either in JavaScript or Typescript — directly inside your Astro files to enhance the abilities of existing HTML elements. 
 
 The code that is written and sent to the client is packaged as independent, async `<script type="modules">` modules which are scoped directly to the element in question.
 
@@ -21,6 +21,6 @@ This non-blocking, asynchronous approach allows the DOM and all of its contents 
 
 Since the payload is scoped to each element, the browser handles the majority of the work on the client-side, without any additional overhead cost of having to render everything out in JavaScript, or send down render files to the client.
 
-This is how XElement gives you the ability to create interactive, web standard, Astro compliant, HTML elements without the use of any external framework or library.
+This is how XElement gives you the ability to create interactive, web standards based, and Astro compliant HTML elements without the use of any external framework or library.
 
-Making using XElement to provide client-side interactivity cheaper, more versatile and far easier to implement over other similar implementation methods with Astro supported UI frameworks.
+This makes using XElement to provide client-side interactivity cheaper, more versatile and far easier to implement over other similar implementation methods with Astro supported UI frameworks.

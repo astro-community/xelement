@@ -7,7 +7,7 @@ page_description: "A collective overview of XElements @Methods. Here you can get
 
 XElement provides you with nine unique methods for interacting with XElement. These are created and implemented to help you apply your client-side interactivity with little effort.
 
-XElements methods are applied using the `@` prefix. This instructs XElement to pick up on the different attributes being passed and apply the XMagic in the background.
+XElements methods are applied using the `@` prefix. This instructs XElement to pick up on the different attributes being passed and apply some &ldquo;XMagic&rdquo; in the background.
 
 For each of the methods described on this page we have individual pages for each method. Giving you further insight on how and when to use these powerful features.
 
@@ -47,13 +47,13 @@ You can find out more about XElement's `@do` method [here](/docs/api/methods/do)
 
 Each observer is setup and ready for you to provide it a callback function which executes on which ever observation you wish to conduct.
 
-Every observer method also come with the ability to pass through its own options. Providing an extra level of control over the observations that are occurring on the element. These `options` vary between observers and we tell you about them in more details in their respective pages.
+Every observer method also comes with the ability to pass through its own options. Providing an extra level of control over the observations that are occurring on the element. These `options` vary between observers and we tell you about them in more details in their respective pages.
 
 -----
 
 ## Using Events
 
-A Large part of XElement's product offering is that we help to make applying any event listener on any element that you wish. Well within reason.
+A Large part of XElement's product offering is that we help to make applying any event listener on any element that you wish well within reason.
 
 ```js
 @click | @fullscreenchange | @mouseenter ...
@@ -95,4 +95,4 @@ XElement's internal non-persistant data store. This is available to every XEleme
 
 ------
 
-We strongly encourage you to explore each of the dedicated pages for each of the API's listed above. By being deliberately spares here we have allowed for more space to be available to each method, this way you can have a firm and full understanding over XElement and its methods.
+_We strongly encourage you to explore each of the dedicated pages for each of the API's listed above. By being deliberately sparing here we have allowed for more space to be available to each method. This way you can have a firm and full understanding over XElement and its methods._
