@@ -96,7 +96,7 @@ You will notice that Astro starter "framework" examples (e.g. React, Svelte etc.
 With XElement, you can have a fully-functioning, interactive *Astro* counter component — no other framework required!
 
 
-### Let Start
+### Let's Start
 
 Let's create our own interactive `<HCounter>` component (`<HCounter>` will be converted to `<h-counter>` under-the-hood making your custom element a valid, well, [custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements#high-level_view). Note that this time, we will need to declare a few different XElements, one to represent each HTML element we wish to create.
 
