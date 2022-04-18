@@ -6,7 +6,9 @@ With XElement you will find that the &ldquo;deep-end&rdquo; is quiet shallow and
 
 To gently introduce you to XElement we will be making two very simple components. In building these two components, you will learn to utilize the methods that XElement provides to make your life easier.
 
-The first of these being our maiden `<hello-world>` component, and the second being the defacto `<counter>` component.
+The first of these being our maiden `<hello-world>` component, and the second being the defacto `<h-counter>` component.
+
+_What's this `h-counter` prefixed thing? It's a web component. We could call it `counter` and it would be perfectly valid HTML5 (and would work in many places), but, the [web standards](https://html.spec.whatwg.org/#valid-custom-element-name) are moving us away from this approach._
 
 ## `<HelloWorld>`
 
@@ -85,7 +87,7 @@ Now, you should see the text 'Hello-World' fade nicely in to view.
 
 -----------------------
 
-## `<Counter>`
+## `Counter`
 
 How could we not provide an example of a 'Counter'?
 
@@ -96,31 +98,31 @@ With XElement, you can have a fully-functioning, interactive *Astro* counter com
 
 ### Let Start
 
-Let's create our own interactive `<Counter>` component. Note that this time, we will need to declare a few different XElements, one to represent each HTML element we wish to create.
+Let's create our own interactive `<HCounter>` component (`<HCounter>` will be converted to `<h-counter>` under-the-hood making your custom element a valid, well, [custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements#high-level_view). Note that this time, we will need to declare a few different XElements, one to represent each HTML element we wish to create.
 
-Our counter requires two buttons, as well as a counter display. We also need to create a parent `<Counter>` container element. 
+Our counter requires two buttons, as well as a counter display. We also need to create a parent `<HCounter>` container element. 
 
 We can define all of these elements from XElement at once:
 
 ```astro
 ---
 import XElement from 'astro-`xelement`'
-const {button:Button, span:Display, Counter} = XElement
+const {button:Button, span:Display, HCounter} = XElement
 ---
 ```
 
 Here we are defining three different types HTML elements to create four distinct HTML elements. (Remember, we're making two buttons. So they are distinct elements in the document, but they are the same type of element!) 
 
-Two types of these *Named Elements* are familiar HTML Elements: `<button>` and `<span>`. The parent component is our `<Counter>` and is not named. It produces an HTML `<counter>` element which is a [DocumentFragment](https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment) — a special type of HTML element.
+Two types of these *Named Elements* are familiar HTML Elements: `<button>` and `<span>`. The parent component is our `<HCounter>` and is not named. It produces an HTML `<h-counter>` element which is a [DocumentFragment](https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment) — a special type of HTML element.
 
-Let's see how we can make our XElement `<Counter>` component **do** some stuff like add, subtract, and display the current count:
+Let's see how we can make our XElement `<HCounter>` component **do** some stuff like add, subtract, and display the current count:
 
 ```astro
 ---
 import XElement from 'astro-`xelement`'
-const {button:Button, span:Display, Counter} = XElement
+const {button:Button, span:Display, HCounter} = XElement
 ---
-<Counter
+<HCounter
     @do={(element,store)=>{
         store.count = 0 
     }}
@@ -141,7 +143,7 @@ const {button:Button, span:Display, Counter} = XElement
     }}>
         -
     </Button>
-</Counter>
+</HCounter>
 ```
 ### `@` decorators
 To start enhancing our component, we use one of the many `@` decorators recognized by `XElement` to specify what type of action we wish it to perform.
@@ -157,19 +159,21 @@ XElement also provides a `store` that serves as a special non-persistent data ob
 Giving an `id` to an XElement — as we have done with `<Display>` — allows us to target that element from elsewhere in the component tree. In this example, we can update the counter's displayed count by referencing our `store`, and using it to change the `<Display>` element's `textContent`.
 
 ### Summary 
-In this example, what we are asking our  parent element (the `<Counter>`) to **do**  is initialise the `store` with a `count` of `0`. 
+In this example, what we are asking our  parent element (the `<HCounter>`) to **do**  is initialise the `store` with a `count` of `0`. 
 
 Then, we're telling the buttons that when they receive a `click` event, they should increment or decrement the `store.count` respectively; and update the `display.textContent` accordingly.
 
-This `<Counter>` example renders the following HTML to the page:
+This `<HCounter>` example renders the following HTML to the page:
 ```html
-<counter>
+<h-counter>
     <button>+</button> 
     <span id="display">0</span>
     <button>-</button> 
-</counter>
+</h-counter>
 
 ```
+
+_Note: that capitalized `HCounter` gets converted to hyphenated `h-counter` which is essentially a valid custom element._
 
 ## Next Steps:
 
