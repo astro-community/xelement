@@ -138,19 +138,12 @@ const { AgDialog } = XElement;
 const {dialogId, ...attrs} = Astro.props
 ---
 
-<script is:inline>
-  function inlineFn(dialogContainerId) {
-    console.log('inlineFn called with: ', dialogContainerId)
-    const agDialogElement = document.getElementById(dialogContainerId)
-    console.log('agDialogElement: ', agDialogElement);
-    // ...and so on
-  }
-</script>
-
 <AgDialog
   define:vars={{ dialogId }}
   @do={() => {
-    inlineFn(dialogId);
+    const agDialogElement = document.getElementById(dialogId)
+    console.log('agDialogElement: ', agDialogElement);
+    // ...and so on
   }}
 />
 
