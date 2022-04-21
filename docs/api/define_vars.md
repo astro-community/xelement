@@ -125,7 +125,7 @@ When building a component for reuse, we often want to be able to pass in props f
 * how the component should be styled
 * a target in the DOM to access once DOM is loaded
 
-`Astro.props` provides the mechanism for receiving said props and can be used in tandem with `define:vars` to achieve this feat:
+`Astro.props` provides the mechanism for receiving said props and it's easy to just place those passed in props as attributes or `class:list` to your component. However, how do you get them into your `@do` decorator hook? You can use `define:vars` to achieve this feat easily:
 
 -------
 
