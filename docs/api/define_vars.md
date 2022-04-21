@@ -38,7 +38,7 @@ XElement serializes the data that you are sending into the client so its safe an
     const dolphins = "So long, and thanks for all the fish!"
 ---
     <Box
-        @define:vars={
+        define:vars={
             {
                 answer,
                 sum,
@@ -92,7 +92,7 @@ const list = ['joy','happy','fun']
 ---
 
 <Box 
-    @define:vars={
+    define:vars={
         {
             fancy,
             msg,
@@ -118,6 +118,43 @@ const list = ['joy','happy','fun']
 ```
 
 -------
+
+### Provides access to Astro.props
+
+When building a component for reuse, we often want to be able to pass in props for things like:
+* how the component should be styled
+* a target in the DOM to access once DOM is loaded
+
+`Astro.props` provides the mechanism for receiving said props and can be used in tandem with `define:vars` to achieve this feat:
+
+-------
+
+```astro
+
+---
+import XElement from 'astro-xelement'
+
+const { AgDialog } = XElement;
+const {dialogId, ...attrs} = Astro.props
+---
+
+<script is:inline>
+  function inlineFn(dialogContainerId) {
+    console.log('inlineFn called with: ', dialogContainerId)
+    const agDialogElement = document.getElementById(dialogContainerId)
+    console.log('agDialogElement: ', agDialogElement);
+    // ...and so on
+  }
+</script>
+
+<AgDialog
+  define:vars={{ dialogId }}
+  @do={() => {
+    inlineFn(dialogId);
+  }}
+/>
+
+```
 
 ## Local Variables
 
