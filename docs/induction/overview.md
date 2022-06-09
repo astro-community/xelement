@@ -59,7 +59,7 @@ Explore our guides to see discover more ways to use XElement in your project.
 
 Show us your stuff! We'd love to see what you've made with `XElement` and Astro.
 
-Share your creations with the Astro Discord Community in the `#Showcase` channel, Tweet them at us, send them to us via Github or find us on Discord.
+Share your creations with the Astro Discord Community in the `#Showcase` channel, Tweet them at us, send them to us via [Github](https://github.com/astro-community/xelement) or find us on Discord.
 
 As more people build web components with XElement, we will gather components from users and showcase them on your behalf, open source is all about caring and sharing.
 
@@ -75,7 +75,7 @@ The XElement tool itself is considered to be stable and safe for use in producti
 
 ## Get Involved
 
-Our github repo is active and we welcome any issues or PR requests. This is the best way to provide feedback, report bugs, and help improve documentation.
+Our [GitHub](https://github.com/astro-community/xelement) repo is active and we welcome any issues or PR requests. This is the best way to provide feedback, report bugs, and help improve documentation.
 
 ----------
 
